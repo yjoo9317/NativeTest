@@ -3,6 +3,7 @@
 //
 
 #include <jni.h>
+#include <shapes/triangle.h>
 
 #include "glesNative.h"
 
@@ -10,7 +11,9 @@
 extern "C" {
 #endif
 
+/*
 GLESNative *gGlesObject;
+
 
 JNIEXPORT void JNICALL
 Java_com_sonos_youngjoopark_nativetest_GLESContextActivity_CreateObjectNative(JNIEnv *env,
@@ -48,7 +51,7 @@ Java_com_sonos_youngjoopark_nativetest_GLESContextActivity_GetGLESVersionNative(
     version = gGlesObject->GetGLESVersionInfo();
     return env->NewStringUTF(version.c_str());
 }
-
+*/
 #ifdef  __cplusplus
 };
 #endif

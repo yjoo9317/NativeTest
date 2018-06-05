@@ -8,7 +8,7 @@
 #include <string>
 #include "glesNative.h"
 #include "myLogger.h"
-GLuint LoadShaders(std::string vertexShaderCode, std::string fragmentShaderCode);
-GLuint GetAttributeLocation(GLuint programId, std::string attributeName);
+GLuint loadShaders(std::string vertexShaderCode, std::string fragmentShaderCode);
+GLuint getAttributeLocation(GLuint programId, std::string attributeName);
 
 #endif //NATIVETEST_MYSHADER_H

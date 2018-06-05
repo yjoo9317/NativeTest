@@ -15,16 +15,16 @@
 class Triangle {
 public:
     Triangle();
-    void    PerformGLInits();
+    void    initGL();
     void    Render();
     void    SetViewport(int width, int height);
-    bool    IsInitsDone() { return initsDone; }
+    bool    IsInitsDone() { return initDone; }
 
 private:
-    void    RenderTriangle();
-    void    AnimateTriangle();
+    void    renderTriangle();
+    void    animateTriangle();
 
-    bool    initsDone;
+    bool    initDone;
 
     // vertex buffer for triangle's vertices, colors
     GLuint  vertexBuffer, colorBuffer;

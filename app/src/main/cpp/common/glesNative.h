@@ -7,14 +7,20 @@
 #include <sstream>
 #include <iostream>
 #include <GLES2/gl2.h>
+#include <GLES2/gl2ext.h>
 #include <stdio.h>
 #include <string>
 #include "myLogger.h"
 
+
+void NativeGLInit();
+void CheckGLError(std::string funcName);
+
+/*
 class GLESNative {
 public:
     GLESNative();
-    void    PerformGLInits();
+    void    initGL();
     void    Render();
     void    SetViewport(int width, int height);
     bool    IsInitsDone(){return initsDone;}
@@ -24,5 +30,5 @@ private:
     bool    initsDone;
     std::string glesVersionInfo;
 };
-
+*/
 #endif //NATIVETEST_GLESNATIVE_H

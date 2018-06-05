@@ -3,6 +3,7 @@
 //
 
 #include <jni.h>
+#include <shapes/triangle.h>
 
 #include "glesNative.h"
 
@@ -10,15 +11,16 @@
 extern "C" {
 #endif
 
-extern GLESNative *gGlesObject;
+//extern GLESNative *gGLObject;
+extern Triangle *gGLObject;
 
 JNIEXPORT void JNICALL
 Java_com_sonos_youngjoopark_nativetest_MyGLRenderer_DrawFrameNative(JNIEnv *env,
                                                          jobject instance) {
-    if (gGlesObject == NULL) {
+    if (gGLObject == NULL) {
         return;
     }
-    gGlesObject->Render();
+    gGLObject->Render();
 }
 
 JNIEXPORT void JNICALL
@@ -26,11 +28,11 @@ Java_com_sonos_youngjoopark_nativetest_MyGLRenderer_SurfaceCreatedNative(JNIEnv 
                                                               jobject instance) {
 
     MyLOGW("Native Surface created called..");
-    if (gGlesObject == NULL) {
+    if (gGLObject == NULL) {
         MyLOGE("[SurfaceCreatedNative] GLESNative instance is null. ");
         return;
     }
-    gGlesObject->PerformGLInits();
+    gGLObject->initGL();
 }
 
 JNIEXPORT void JNICALL
@@ -38,10 +40,10 @@ Java_com_sonos_youngjoopark_nativetest_MyGLRenderer_SurfaceChangedNative(JNIEnv 
                                                               jobject instance,
                                                               jint width,
                                                               jint height) {
-    if (gGlesObject == NULL) {
+    if (gGLObject == NULL) {
         return;
     }
-    gGlesObject->SetViewport(width, height);
+    gGLObject->SetViewport(width, height);
 }
 #ifdef __cplusplus
 };

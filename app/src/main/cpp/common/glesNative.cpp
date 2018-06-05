@@ -44,18 +44,21 @@ void CheckGLError(std::string funcName){
     }
 }
 
-/**
- * Class constructor
- */
+void NativeGLInit() {
+
+    // set black background color
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+
+    CheckGLError("NativeGLInit");
+}
+/*
 GLESNative::GLESNative() {
     initsDone = false;
     glesVersionInfo ="";
 }
 
-/**
- * Perform inits and set various GLES options before rendering image
- */
-void GLESNative::PerformGLInits() {
+
+void GLESNative::initGL() {
 
     MyLOGW("PerformGLInits.");
     // Black background
@@ -95,3 +98,4 @@ void GLESNative::SetViewport(int width, int height) {
 
     CheckGLError("GLESNative::SetViewport");
 }
+*/

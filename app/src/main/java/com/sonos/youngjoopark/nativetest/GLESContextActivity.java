@@ -12,11 +12,12 @@ public class GLESContextActivity extends AppCompatActivity {
     private TextView mTextView = null;
     private MyGLSurfaceView mGLView = null;
     private String version="";
+    /*
     private native void CreateObjectNative();
     private native void DeleteObjectNative();
     private native String GetGLESVersionNative();
     private native boolean IsInitsDoneNative();
-
+*/
     // Used to load the 'native-lib' library on application startup.
     static {
         System.loadLibrary("native-lib");
@@ -27,7 +28,7 @@ public class GLESContextActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        CreateObjectNative();
+       // CreateObjectNative();
 
         //mGLView = new MyGLSurfaceView(this);
         //setContentView(mGLView);
@@ -59,7 +60,7 @@ public class GLESContextActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
 
-        DeleteObjectNative();
+    //    DeleteObjectNative();
     }
 
 
@@ -67,7 +68,7 @@ public class GLESContextActivity extends AppCompatActivity {
 
         @Override
         protected Integer doInBackground(Void... params) {
-            while(!IsInitsDoneNative()){
+         /*   while(!IsInitsDoneNative()){
                 try {
                     Thread.sleep(100);
                     Log.w(TAG, "GL not initialized.");
@@ -76,13 +77,13 @@ public class GLESContextActivity extends AppCompatActivity {
                 } catch (Exception e) {
 
                 }
-            }
+            }*/
             return 0;
         }
 
         @Override
         protected void onPostExecute(Integer result) {
-            displayGLVersion(GetGLESVersionNative());
+           // displayGLVersion(GetGLESVersionNative());
         }
     }
 

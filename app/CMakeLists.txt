@@ -5,7 +5,7 @@
 
 cmake_minimum_required(VERSION 3.4.1)
 
-include_directories("src/main/cpp", "src/main/cpp/common", "src/main/cpp/jni",
+include_directories("src/main/cpp" "src/main/cpp/common" "src/main/cpp/jni"
                     "src/main/cpp/shapes" ${ANDROID_NDK}/sources/android/native_app_glue/)
 
 # Creates and names a library, sets it as either STATIC
@@ -24,10 +24,11 @@ add_library( # Sets the name of the library.
 add_library(GLESNative SHARED
             src/main/cpp/common/glesNative.cpp
             src/main/cpp/jni/glesContextActivity.cpp
+            src/main/cpp/jni/TriangleActivity.cpp
             src/main/cpp/jni/myGLRenderer.cpp
             src/main/cpp/shapes/triangle.cpp
             src/main/cpp/common/myShader.cpp
-            src/main/cpp/common/JNIHelper.cpp)
+            src/main/cpp/common/MyJNIShaderHelper.cpp)
 add_library( app-glue
              STATIC
              ${ANDROID_NDK}/sources/android/native_app_glue/android_native_app_glue.c )
