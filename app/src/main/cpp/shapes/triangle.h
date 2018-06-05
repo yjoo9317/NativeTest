@@ -18,7 +18,7 @@ public:
     void    PerformGLInits();
     void    Render();
     void    SetViewport(int width, int height);
-    bool    IsInitsDone(){return initsDone;}
+    bool    IsInitsDone() { return initsDone; }
 
 private:
     void    RenderTriangle();
