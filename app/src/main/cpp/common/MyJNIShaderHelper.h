@@ -5,6 +5,7 @@
 #ifndef NATIVETEST_MY_JNI_SHADER_HELPER_H
 #define NATIVETEST_MY_JNI_SHADER_HELPER_H
 #include "myLogger.h"
+#include "simpleGLM.h"
 #include <android_native_app_glue.h>
 #include <pthread.h>
 #include <string>
@@ -21,6 +22,8 @@ private:
     std::string androidPath;
     AAssetManager *aAssetManager;
     std::string getFileName(std::string fileName);
+    void printGLMMat4(glm::mat4 matrix);
+
 public:
     MyJNIShaderHelper(JNIEnv *env, jobject obj, jobject assetManager, jstring path);
     ~MyJNIShaderHelper();

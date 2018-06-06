@@ -6,7 +6,8 @@
 cmake_minimum_required(VERSION 3.4.1)
 
 include_directories("src/main/cpp" "src/main/cpp/common" "src/main/cpp/jni"
-                    "src/main/cpp/shapes" ${ANDROID_NDK}/sources/android/native_app_glue/)
+                    "src/main/cpp/shapes" ${ANDROID_NDK}/sources/android/native_app_glue/
+                    "src/main/external/glm")
 
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
@@ -28,7 +29,9 @@ add_library(GLESNative SHARED
             src/main/cpp/jni/myGLRenderer.cpp
             src/main/cpp/shapes/triangle.cpp
             src/main/cpp/common/myShader.cpp
-            src/main/cpp/common/MyJNIShaderHelper.cpp)
+            src/main/cpp/common/MyJNIShaderHelper.cpp
+            src/main/cpp/common/MyCamera.cpp
+            src/main/cpp/shapes/cube.cpp)
 add_library( app-glue
              STATIC
              ${ANDROID_NDK}/sources/android/native_app_glue/android_native_app_glue.c )
