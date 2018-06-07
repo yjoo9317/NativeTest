@@ -26,7 +26,9 @@ add_library(GLESNative SHARED
             src/main/cpp/common/glesNative.cpp
             src/main/cpp/jni/glesContextActivity.cpp
             src/main/cpp/jni/TriangleActivity.cpp
+            src/main/cpp/jni/CubeActivity.cpp
             src/main/cpp/jni/myGLRenderer.cpp
+            src/main/cpp/jni/gestures.cpp
             src/main/cpp/shapes/triangle.cpp
             src/main/cpp/common/myShader.cpp
             src/main/cpp/common/MyJNIShaderHelper.cpp

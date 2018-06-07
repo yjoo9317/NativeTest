@@ -41,7 +41,7 @@ private:
     // MVP(ModelView Projection) Matrix = ProjectMatrix X ModelMatrix X Vertex (model)
     //---------------------------------------------------------------------------------------
 
-    glm::mat4 projectionMatrix;
+    glm::mat4 projectionViewMatrix;
     glm::mat4 rotateMatrix;
     glm::mat4 translateMatrix;
     glm::mat4 modelMatrix;
@@ -52,7 +52,7 @@ private:
     // Don't know what it means????
     // six degree of freedom of the model contained in a quaternion and x,y,z coordinates
     //---------------------------------------------------------------------------------------
-    glm::highp_quat modelQuaternion;
+    glm::quat modelQuaternion;
     float deltaX, deltaY, deltaZ;
 };
 

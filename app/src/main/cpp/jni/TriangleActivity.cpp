@@ -10,30 +10,31 @@
 extern "C" {
 #endif
 
-MyJNIShaderHelper *gHelper = NULL;
-Triangle *gGLObject = NULL;
+MyJNIShaderHelper *gHelperObject = NULL;
+Triangle *gTriangleObject = NULL;
 
 JNIEXPORT void JNICALL
 Java_com_sonos_youngjoopark_nativetest_TriangleActivity_CreateObjectNative(JNIEnv *env,
                                                                            jobject instance,
                                                                            jobject assetManager,
                                                                            jstring pathToInternalDir) {
-    gHelper = new MyJNIShaderHelper(env, instance, assetManager, pathToInternalDir);
-    gGLObject = new Triangle();
+    gHelperObject = new MyJNIShaderHelper(env, instance, assetManager, pathToInternalDir);
+    gTriangleObject = new Triangle();
 }
 
 JNIEXPORT void JNICALL
 Java_com_sonos_youngjoopark_nativetest_TriangleActivity_DeleteObjectNative(JNIEnv *env,
                                                                            jobject instance) {
-    if (gGLObject != NULL) {
-       delete gGLObject;
+    if (gTriangleObject != NULL) {
+       delete gTriangleObject;
     }
-    gGLObject = NULL;
+    gTriangleObject = NULL;
 
-    if (gHelper != NULL) {
-       delete gHelper;
+    if (gHelperObject != NULL) {
+       delete gHelperObject;
     }
-    gHelper = NULL;
+    gHelperObject = NULL;
+
 }
 
 

@@ -56,12 +56,18 @@ void Triangle::renderTriangle() {
     // enable vertex buffer
     glEnableVertexAttribArray(vertexAttribute);
     glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
+    //--------------------------------------------------------------------------
+    // in shader: gl_
     glVertexAttribPointer(vertexAttribute, 4, GL_FLOAT, GL_FALSE, 0, nullptr);
+    //--------------------------------------------------------------------------
 
     // enable color buffer
     glEnableVertexAttribArray(colorAttribute);
     glBindBuffer(GL_ARRAY_BUFFER, colorBuffer);
+    //--------------------------------------------------------------------------
+    // in shader: gl_FragColor = vertexColor
     glVertexAttribPointer(colorAttribute, 4, GL_FLOAT, GL_FALSE, 0, nullptr);
+    //---------------------------------------------------------------------------
 
     glDrawArrays(GL_TRIANGLES, 0, 3);
     glDisableVertexAttribArray(vertexAttribute);

@@ -4,6 +4,7 @@
 
 #include <jni.h>
 #include <shapes/triangle.h>
+#include <shapes/cube.h>
 
 #include "glesNative.h"
 
@@ -12,7 +13,8 @@ extern "C" {
 #endif
 
 //extern GLESNative *gGLObject;
-extern Triangle *gGLObject;
+//extern Triangle *gGLObject;
+extern Cube *gGLObject;
 
 JNIEXPORT void JNICALL
 Java_com_sonos_youngjoopark_nativetest_MyGLRenderer_DrawFrameNative(JNIEnv *env,
@@ -43,7 +45,7 @@ Java_com_sonos_youngjoopark_nativetest_MyGLRenderer_SurfaceChangedNative(JNIEnv 
     if (gGLObject == NULL) {
         return;
     }
-    gGLObject->SetViewport(width, height);
+    gGLObject->SetViewPort(width, height);
 }
 #ifdef __cplusplus
 };
