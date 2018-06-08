@@ -49,6 +49,9 @@ void NativeGLInit() {
     // set black background color
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
+    glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_LEQUAL);
+
     CheckGLError("NativeGLInit");
 }
 /*

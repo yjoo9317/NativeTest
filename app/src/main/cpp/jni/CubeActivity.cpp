@@ -18,6 +18,7 @@ Java_com_sonos_youngjoopark_nativetest_CubeActivity_CreateObjectNative(JNIEnv *e
                                                                        jobject instance,
                                                                        jobject assetManager,
                                                                        jstring pathToInternalDir){
+    MyLOGI("CreateObjectNative called with path %s..", pathToInternalDir);
     gHelper = new MyJNIShaderHelper(env, instance, assetManager, pathToInternalDir);
     gGLObject = new Cube();
 }

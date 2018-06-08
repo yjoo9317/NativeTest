@@ -27,6 +27,44 @@ void Cube::initGL() {
 
     //vec4 vertexPosition
     GLfloat cubeVertex[] = {
+
+            -1.0f,-1.0f,-1.0f,  // face0 left
+            -1.0f,-1.0f, 1.0f,  //     0
+            -1.0f, 1.0f, 1.0f,  //     0
+            -1.0f,-1.0f,-1.0f,  //     0
+            -1.0f, 1.0f, 1.0f,  //     0
+            -1.0f, 1.0f,-1.0f,  //     0
+            1.0f,-1.0f,-1.0f,  // face1 right
+            1.0f, 1.0f, 1.0f,  //     1
+            1.0f,-1.0f, 1.0f,  //     1
+            1.0f,-1.0f,-1.0f,  //     1
+            1.0f, 1.0f,-1.0f,  //     1
+            1.0f, 1.0f, 1.0f,  //     1
+            1.0f,-1.0f, 1.0f,  // face2 down
+            -1.0f,-1.0f,-1.0f,  //     2
+            1.0f,-1.0f,-1.0f,  //     2
+            -1.0f,-1.0f,-1.0f,  //     2
+            1.0f,-1.0f, 1.0f,  //     2
+            -1.0f,-1.0f, 1.0f,  //     2
+            -1.0f, 1.0f, 1.0f,  // face3 top
+            1.0f, 1.0f, 1.0f,  //     3
+            -1.0f, 1.0f,-1.0f,  //     3
+            -1.0f, 1.0f,-1.0f,  //     3
+            1.0f, 1.0f, 1.0f,  //     3
+            1.0f, 1.0f,-1.0f,  //     3
+            1.0f, 1.0f, 1.0f,  // face4 front
+            -1.0f, 1.0f, 1.0f,  //     4
+            1.0f,-1.0f, 1.0f,  //     4
+            -1.0f, 1.0f, 1.0f,  //     4
+            -1.0f,-1.0f, 1.0f,  //     4
+            1.0f,-1.0f, 1.0f,  //     4
+            -1.0f, 1.0f,-1.0f,  // face5 back
+            1.0f, 1.0f,-1.0f,  //     5
+            1.0f,-1.0f,-1.0f,  //     5
+            1.0f,-1.0f,-1.0f,  //     5
+            -1.0f,-1.0f,-1.0f,  //     5
+            -1.0f, 1.0f,-1.0f   //     5
+            /*
         //    x      y      z     w
             -1.0f, -1.0f, -1.0f, 1.0f   // face0 left
             -1.0f, -1.0f,  1.0f, 1.0f   //     0
@@ -64,6 +102,7 @@ void Cube::initGL() {
              1.0f, -1.0f, -1.0f, 1.0f,  //     5
             -1.0f, -1.0f, -1.0f, 1.0f,  //     5
             -1.0f,  1.0f, -1.0f, 1.0f   //     5
+             */
     };
 
     glGenBuffers(1, &vertexBuffer);
@@ -73,6 +112,44 @@ void Cube::initGL() {
 
     //vec4 fragmentColor
     GLfloat vertexColors[] = {
+            1.0f, 0.0f, 0.0f, // red    - face0
+            1.0f, 0.0f, 0.0f, //              0
+            1.0f, 0.0f, 0.0f, //              0
+            1.0f, 0.0f, 0.0f, //              0
+            1.0f, 0.0f, 0.0f, //              0
+            1.0f, 0.0f, 0.0f, //              0
+            0.0f, 1.0f, 1.0f, // cyan   - face1
+            0.0f, 1.0f, 1.0f, //              1
+            0.0f, 1.0f, 1.0f, //              1
+            0.0f, 1.0f, 1.0f, //              1
+            0.0f, 1.0f, 1.0f, //              1
+            0.0f, 1.0f, 1.0f, //              1
+            0.0f, 1.0f, 0.0f, // green  - face2
+            0.0f, 1.0f, 0.0f, //              2
+            0.0f, 1.0f, 0.0f, //              2
+            0.0f, 1.0f, 0.0f, //              2
+            0.0f, 1.0f, 0.0f, //              2
+            0.0f, 1.0f, 0.0f, //              2
+            1.0f, 0.0f, 1.0f, // violet - face3
+            1.0f, 0.0f, 1.0f, //              3
+            1.0f, 0.0f, 1.0f, //              3
+            1.0f, 0.0f, 1.0f, //              3
+            1.0f, 0.0f, 1.0f, //              3
+            1.0f, 0.0f, 1.0f, //              3
+            0.0f, 0.0f, 1.0f, // blue   - face4
+            0.0f, 0.0f, 1.0f, //              4
+            0.0f, 0.0f, 1.0f, //              4
+            0.0f, 0.0f, 1.0f, //              4
+            0.0f, 0.0f, 1.0f, //              4
+            0.0f, 0.0f, 1.0f, //              4
+            1.0f, 1.0f, 0.0f, // yellow - face5
+            1.0f, 1.0f, 0.0f, //              5
+            1.0f, 1.0f, 0.0f, //              5
+            1.0f, 1.0f, 0.0f, //              5
+            1.0f, 1.0f, 0.0f, //              5
+            1.0f, 1.0f, 0.0f, //              5
+
+            /*
           // R     G     B    alpha
             1.0f, 0.0f, 0.0f, 1.0f, // red    - face0
             1.0f, 0.0f, 0.0f, 1.0f, //              0
@@ -110,6 +187,7 @@ void Cube::initGL() {
             1.0f, 1.0f, 0.0f, 1.0f, //              5
             1.0f, 1.0f, 0.0f, 1.0f, //              5
             1.0f, 1.0f, 0.0f, 1.0f  //              5
+             */
     };
 
     // create vec4
@@ -140,14 +218,14 @@ void Cube::renderCube() {
     glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
     //--------------------------------------------------------------------------
     // in shader: gl_Position = vertexPosition
-    glVertexAttribPointer(vertexAttributeLocation, 4, GL_FLOAT, GL_FALSE, 0, nullptr);
+    glVertexAttribPointer(vertexAttributeLocation, 3, GL_FLOAT, GL_FALSE, 0, nullptr);
     //--------------------------------------------------------------------------
 
     glEnableVertexAttribArray(colorAttributeLocation);
     glBindBuffer(GL_ARRAY_BUFFER, colorBuffer);
     //--------------------------------------------------------------------------
     // in shader: gl_FragColor = vertexColor;
-    glVertexAttribPointer(colorAttributeLocation, 4, GL_FLOAT, GL_FALSE, 0, nullptr);
+    glVertexAttribPointer(colorAttributeLocation, 3, GL_FLOAT, GL_FALSE, 0, nullptr);
     //--------------------------------------------------------------------------
 
     glDrawArrays(GL_TRIANGLES, 0, 36); // 12 triangles * 3 vertices

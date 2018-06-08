@@ -9,7 +9,9 @@ public class MyGLSurfaceView extends GLSurfaceView {
     private static final int VERSION2 = 2;
     private MyGLRenderer mRenderer;
     public MyGLSurfaceView(Context context, AttributeSet attr) {
-        super(context);
+        super(context, attr);
+        Log.i("MyGLSurfaceView", "creating a GL surface view.");
+
         try {
 
             setEGLContextClientVersion(VERSION2);

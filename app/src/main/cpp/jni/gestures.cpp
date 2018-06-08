@@ -30,9 +30,10 @@ Java_com_sonos_youngjoopark_nativetest_Gestures_scrollNative(JNIEnv *env, jobjec
     }
 
     // normalize movemenets on the screen with surface dimensions
-    // invert dY ??
+    // invert dY since its coordinate direction is opposite..
+    // i.e., top -> bottom on the screen is positive
     float dX = (float) distanceX / gGLObject->getScreenWidth();
-    float dY = (float) distanceY / gGLObject->getScreenHeight();
+    float dY = -(float) distanceY / gGLObject->getScreenHeight();
     float posX = 2 * positionX / gGLObject->getScreenWidth() - 1.0f;
     float posY = -2 * positionY / gGLObject->getScreenHeight() + 1.0f;
     posX = fmax(-1.0f, fmin(1.0f, posX));

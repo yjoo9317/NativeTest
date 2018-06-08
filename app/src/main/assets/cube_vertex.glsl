@@ -1,11 +1,9 @@
-#version 120
-
-attribute vec4 vertexPosition;
-attribute vec4 vertexColor;
-varying vec4 fragmentColor; // sent to fragment shader for blending
+attribute vec3 vertexPosition;
+attribute vec3 vertexColor;
+varying vec3 fragmentColor; // sent to fragment shader for blending
 uniform mat4 mvpMat; // MVP Matrix
 
 void main() {
-    gl_Position = mvpMat * vertexPosition;
+    gl_Position = mvpMat * vec4(vertexPosition, 1.0);
     fragmentColor = vertexColor;
 }
